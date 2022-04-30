@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Battle of the Beams: Knickebein
+    </title>
+    <style>
+      /* */
+      html {
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          margin: 0;
+          padding: 0;
+
+          background-color: grey;
+      }
+
+      /* The purpose of the following section is to make the game world fill the page. With neither horizontal nor vertical clipping/scrolling. */
+      .single-page-box {
+          margin: 0;
+          padding: 0;
+
+          width: 100%;
+          height: 100vh;
+
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+      }
+      .game-buttons {
+          margin: 0;
+          padding: 0.5em;
+
+          flex-shrink: 0;
+
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: center;
+          gap: 20px;
+
+          background-color: white;
+      }
+      .use-remaining-vertical-space {
+          margin: 0;
+          padding: 0;
+
+          flex: 1;
+
+          display: flex;
+          justify-content: center;
+      }
+
+      /* */
+      .slider-div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5em;
+      }
+
+      .game-button-icon {
+          flex: 1;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+
+      #game-world-image {
+          background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="single-page-box">
+      <div class="game-buttons">
+        <div class="slider-div">
+          <label>Dot-dash oscilloscopes</label>
+          <div class="game-button-icon">
+            <input type="image" src="images/Oscilloscope-grab.png" height="40px" value="Dot-dash oscilloscopes" onclick="drawOscilloscopeGridCallback()">
+          </div>
+        </div>
+        <div class="slider-div">
+          <label>Pilot decision</label>
+          <div class="game-button-icon">
+            <input type="image" src="images/U+21C4.svg" height="40px" value="Pilot heading" onclick="drawDirectionFieldCallback()">
+          </div>
+        </div>
+        <div class="slider-div">
+          <label>Hear aircraft headphones</label>
+          <div class="game-button-icon">
+            <input type="image" src="images/headset.png" height="40px" value="Hear aircraft headphones" onclick="audioModCallback()">
+          </div>
+        </div>
+        <div class="slider-div">
+          <label id="aspirin-transmit-div">Aspirin on/off</label>
+          <div class="game-button-icon">
+            <input id="aspirin-transmit" type="image" src="images/switch-off.png" height="40px" value="Aspirin on/off" onclick="aspirinPowerCallback()" autocomplete="off">
+          </div>
+        </div>
+        <div class="slider-div">
+          <label for="aspirin-dot-amplitude">Aspirin &bull; dot power</label>
+          <div class="game-button-icon">
+            <input id="aspirin-dot-amplitude" type="range" min="0" max="100" value="0" name="Aspirin dot power" disabled="true" autocomplete="off">
+          </div>
+        </div class="slider-div">
+        <div class="slider-div">
+          <label for="aspirin-dash-amplitude">Aspirin <b>&mdash;</b> dash power</label>
+          <div class="game-button-icon">
+            <input id="aspirin-dash-amplitude" type="range" min="0" max="100" value="0" name="Aspirin dash power" disabled="true" autocomplete="off">
+          </div>
+        </div>
+        <div class="slider-div">
+          <label>Wind drift direction</label>
+          <div class="game-button-icon">
+            <input type="image" src="images/wind-2.svg" height="40px" value="Wind drift direction" onclick="aircraftDriftModCallback()">
+          </div>
+        </div>
+      </div>
+
+      <svg id='game-world-image' class='use-remaining-vertical-space' viewBox="0 0 1000 1000">
+      </svg>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

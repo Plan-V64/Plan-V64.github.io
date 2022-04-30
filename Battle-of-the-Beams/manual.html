@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Battle of the Beams: Knickebein
+    </title>
+    <style>
+      h1, h2 {
+          display: flex;
+          justify-content: center;
+      }
+      body {
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+          background-color: #4276a6;
+      }
+      .main-content {
+          max-width: 80em;
+          border-radius: 30px;
+          padding: 30px;
+          color: #202020;
+          background-color: #ffffea;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+
+
+    <h1>Manual</h1>
+
+
+    <h2>The radio field</h2>
+
+    <p>
+      Spread in a grid across the map are indicators of the local amplitude (strength) of the radio field.
+    </p>
+
+    <p>
+      The yellow wave icon shows the radio signal amplitude (strength), at that location, right at the current moment.
+    </p>
+
+    <p>
+      The yellow bar in a grey frame is a (crude, sort-of-) oscilloscope, with a display memory of a few seconds. It shows the recent history of the signal amplitude at that location. You'll see Morse dots (short yellow line) take form on the oscilloscopes to the left side of the red Knickebein centerline. And conversely, you'll see Morse dashes (long yellow line) take form to the right side. Near the centerline there's a mix, but in most cases one sound is still dominant.
+    </p>
+
+    <p>
+      The wave icons in the top bar show you:
+      <ul>
+        <li>
+          Red, top: the amplitude (strength) of the radio signal contribution coming from the German Knickebein transmitter.
+        </li>
+        <li>
+          Blue, bottom: the amplitude (strength) of the radio signal contribution coming from the British Aspirin transmitter.
+          <br>
+          (This is absent if the Aspirin transmitter is off.)
+        </li>
+        <li>
+          Yellow: the summed total amplitude (strength) of the radio signal.
+          <br>
+          (This has the same color and meaning as the waves on the world map.)
+          <br>
+          This is the sum of the Knickebein transmitter and the Aspirin transmitter.
+        </li>
+      </ul>
+    </p>
+
+
+    <h2>Knickebein</h2>
+
+    <p>
+      You'll notice that the Knickebein transmitter keeps flipping the waves in the radio field between left and right of its centerline. The left side is only a brief blip (Morse dot), the right side is longer (Morse dash).
+      <br>
+      Knickebein's goal is to form a combined beam in the center between left and right: a linear area where dots and dashes are equally strong and therefore create a continuous signal tone.
+    </p>
+
+    <p>
+      The horn-shaped (triangular) icons are Knickebein transmitters. The main Knickebein has a red color tone. The aircraft will attempt to fly along this beam. The pale grey secondary Knickebein exists to create an intersection point. The aircraft assumes that it's on top of its target when it crosses the secondary Knickebein beam. The secondary Knickebein is greyed-out because it is on a slightly different frequency. The simulation currently doesn't allow you to see its radio field or distort it.
+    </p>
+
+    <p>
+      Side note: You'll notice that there is a little faded overlap between left and right, and that that overlap gets worse the further away from the Knickebein transmitter you look. That is the left/right beams gradually losing their coherence.
+    </p>
+
+
+    <h2>Intersection of two beams</h2>
+
+    <p>
+      An icon of Big Ben is drawn at all locations where the pilot would hear an intersection of the main and secondary Knickebein beams in his headset, and would therefore assume that he's over London. But be aware that that fact is local to that grid cell; just because you (being slightly omniscient) can see Big Ben somewhere, does not mean that a pilot elsewhere on the map will fly in that direction.
+    </p>
+
+
+    <h2>Aircraft</h2>
+
+    <p>
+      The red&black roundel blip represents a Luftwaffe bomber aircraft.
+    </p>
+
+    <p>
+      The yellow oscilloscope bar at the top left gives you an idea of the dot and dash sounds that the aircraft's navigator has heard most recently.
+      <br>
+      This oscilloscope is scaled so that some part of it is always at 100% deflection. This represents the navigator's limitation (mentioned elsewhere in the manual) that it's not practical for him to measure the <em>absolute</em> amplitude of the radio field. He can only <em>compare</em> the loudness of the dots with the loudness of the dashes that he hears in his headphones.
+      <br>
+      (Just to be clear: the oscilloscopes in the map grid over Britain do show you the absolute amplitude. In that respect, this simulation privileges you over the pilot, to help your understanding.)
+    </p>
+
+    <p>
+      The aircraft's navigator goal is to make the dots and the dashes sound equally loud to him.
+      <br>
+      When the dots and dashes sound equally loud, he assumes that he's near the centerline of the Knickebein beam, and steers so that the aircraft's compass heading becomes the same as the direction of the Knickebein centerline (he was told that compass heading before taking off).
+      <br>
+      If he hears louder dots than dashes, he assumes that he's to the left of the centerline, and steers at a moderate right heading (relative to the known compass heading of the Knickebein centerline). Etc.
+      <br>
+      The pilot can't reliably hear the <em>absolute</em> amplitude (strength) of the radio signal; only the <em>relative</em> strengths of the most recent dot versus the most recent dash. That systemic limitation will help you in misleading him!
+    </p>
+
+    <p>
+      The pilot will release the aircraft ordinance when (he believes that) he's near the intersection of the two centerlines of the Knickebein transmitters.
+      <br>
+      The simulation currently indicates that by coloring the grid cell a fiery orange.
+    </p>
+
+    <p>
+      The headphones icon lets your hear the Morse sound that the Luftwaffe aircraft is currently hearing. (It's for illustration, not absolutely necessary.)
+    </p>
+
+
+    <h2>Wind & Drift</h2>
+
+    <p>
+      The aircraft is constantly drifting off-course, being blown around by the wind. You can toggle the drift direction by clicking on the wind icon.
+    </p>
+
+
+    <h2>British spoofing transmitters (Code name "Aspirin")</h2>
+
+    <p>
+      First turn the "Aspirin transmitter" switch to "On". Then use the two sliders to increase the transmit amplitude of the dots and of the dashes.
+    </p>
+
+    <p>
+      Warning: after each change of the controls, there may be a lag of a second or so before you see an effect. If you tweak the dot amplitude control during a dash transmission, you'll have to wait until the transmission pattern comes around to the dots again. And vice versa.
+    </p>
+
+    <p>
+      With careful tweaking, you will see that you have some control over where the aircraft ends up.
+    </p>
+
+    <p>
+      At each location, the radio amplitude of your British spoofing transmitter will <em>add</em> to the existing Knickebein signal. You can not remove or override the Knickebein signal, only selectively add to it. But you will be able to distort its shape: in an area where the Knickebein only wants dashes, you can transmit spoof dots to make the navigator hear dots that are as strong as the dashes (or even louder). Etcetera.
+    </p>
+
+    <p>
+      For the purposes of this simulation, the British Aspirin transmitter covers the entire area with equal power at each point. It does not have distance-dependent falloff like the Knickebein has.
+    </p>
+
+    <p>
+      There's little point in sending out a constant-strength signal of equally strong dots and dashes. That will just create a constant raised baseline. The Knickbein dots and dashes will be superimposed on top of that constant baseline, and the pilot will still be able to distinguish them.
+    </p>
+
+
+    <h2>Notes</h2>
+
+    <p>
+      To reduce tedium, this simulation automates the repetition of the dots/dashes pattern, and automatically syncs the timing of your dots/dashes to those of Knickebein. The real history was a lot more complex/messier.
+    </p>
+
+    <p>
+      In the real world, you could also disrupt the secondary Knickebein, giving more ways to cause confusion. This simulation currently doesn't support that.
+    </p>
+
+    <p>
+      One liberty that I've taken on purpose is that the simulated Knickebein sends at least <em>some</em> radio strength everywhere on its current half of the centerline. In the real Knickebein, the horizontal shape of each lobe of the signal is symmetrical: it fades quite quickly farther away from the centerline of the beam. So in the real world, an aircraft could easily end up in an area where it didn't receive any signal. I've created that inaccuracy to compensate for the very simplistic simulated navigator, and because it's nicer for playing around with this simulation.
+    </p>
+
+    <p>
+      A related purposeful inaccuracy is that the simulation's radio lobes (yellow beams) are probably much too wide, relative to the map.
+    </p>
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Battle of the Beams: Knickebein
+    </title>
+    <style>
+      h2 {
+          display: flex;
+          justify-content: center;
+      }
+      body {
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+          background-color: #4276a6;
+      }
+
+      .main-content {
+          max-width: 65em;
+          border-radius: 30px;
+          padding: 30px;
+          color: #202020;
+          background-color: #ffffea;
+      }
+
+      .intro-text {
+          display: flex;
+          justify-content: center;
+          padding-top: .4em;
+      }
+      .main-title {
+          width: 100%;
+          margin-bottom: 1.5em;
+      }
+
+      .start-button {
+          display: flex;
+          justify-content: center;
+          margin-bottom: .4em;
+
+          font-size: 300%;
+      }
+      .start-button a {
+          color: blue;    /* Regardless of visited vs. unvisited. */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+
+    <h4>
+    <div class="intro-text">
+      Germany's civilian night landing system turned to murderous purpose by Nazi ideology.
+    </div>
+    <div class="intro-text">
+      British scientists, engineers and postmen scrambling to take the shine off.
+    </div>
+    <div class="intro-text">
+      It's the
+    </div>
+    </h4>
+
+    <div class="intro-text">
+      <!-- This is an SVG because that's the easiest way to scale text to the width of the container. -->
+      <svg class="main-title" viewBox="0 0 101 9">
+        <text
+          x="1"
+          y="8.5"
+          font-family="Times New Roman, serif"
+          font-size="12px"
+          font-weight="bold"
+        >
+          Battle of the Beams
+        </text>
+      </svg>
+    </div>
+
+
+    <h2>Introduction</h2>
+
+    <p>
+      This simulation is a little ditty that I made for the <a href="https://tallyhocorner.com/2021/07/escape-evasion-game-jam/">Escape and Evasion Game Jam</a> (<a href="https://tallyhocorner.com/2022/01/escape-evasion-game-jam-2022/">2022 rerun</a>), which is being organized by Tim Stone of <a href="https://tallyhocorner.com">Tally-Ho Corner</a>.
+
+    <p>
+      As a teenager rummaging through my father's bookcases, I came across the book "Most Secret War" by R.V. Jones, formerly of Scientific Intelligence. It tells the stories of his involvement in the "<a href="https://en.wikipedia.org/wiki/Battle_of_the_Beams">Battle of the Beams</a>": how the British gradually discoved the existence of shaped radio wave fields that made Nazi bombers menacingly accurate, and developed tricks to disrupt them. (R.V. Jones tells many other stories too: I heartily recommend that book.)
+    </p>
+
+    <p>
+      The 1930s saw Germany's <a href="https://en.wikipedia.org/wiki/Lorenz_beam">first experiments</a> with blind landing systems for aircraft, named "Lorenz". The direct forerunner of current civilian aviation's <a href="https://en.wikipedia.org/wiki/Instrument_landing_system">ILS</a>: to get you back on the ground safely from a pleasant holiday or mutually-beneficial commerce trip.
+    </p>
+
+    <p>
+      When the people in 1930s Germany elected an expansionist maniac, what was nice and productive in Germany was twisted. The Lorenz landing assist was deformed into "Knickebein": an instrument to let bomber aircraft find British docks, factories, cities, ...
+    </p>
+
+
+    <h2>Simulation</h2>
+
+    <p>
+      This simulation gives you a taste of (my limited understanding of) how Knickebein worked, and what the British could do to disrupt it.
+    </p>
+
+
+    <h2>Goals</h2>
+
+    <p>
+      London is caught in electromagnetic crosshairs.
+      <br>
+      Can you raise a thick fog of interfering radio signals to cloak London's buildings?
+      <br>
+      Can you be a Will-o'-the-wisp, making the pilot drift off towards a horizon without ever finding anything?
+      <br>
+      Can you conjure your own spectral visions of London onto the radio waves, and so misdirect the pilot into bombing elsewhere than his real target?
+      <br>
+      Can you lead the pilot by the nose into wasting bombs on a specific soggy marsh of your choice?
+    </p>
+
+    <p>
+      The icons at the top let you control a powerful radio transmitter in Britain, code name "Aspirin". You can transmit your own spoof Morse dots and dashes.
+    </p>
+
+
+    <h2>Details</h2>
+
+    Here is a <a href="manual.html">manual</a>. (But it's fine to just have a go and experiment, without reading that.)
+
+
+    <h2>Start</h2>
+
+    <div class="start-button">
+      <a href="sim.html">Standard Mode</a>
+    </div>
+    <div class="start-button">
+        <a href="betjeman.html">Betjeman</a>
+    </div>
+    <div class="start-button">
+    </div>
+
+
+    <h2>Disclaimer</h2>
+
+    <p>
+      This little project was thrown together in a hurry, it's my first experiment with doing something non-trivial in Javascript and my first experiment with SVG. Performance is known to be woeful (I lack time to elevate it from "baby's first Javascript" to production quality). It is a rather dry sim, you'll tire of it quickly. I do have some ideas to add more character, but again lack time. Go read R.V. Jones's book for spice, including spies. (And struggles against the forceful personality of <a href="https://en.wikipedia.org/wiki/Frederick_Lindemann,_1st_Viscount_Cherwell">Lindemann</a>, V2 rockets, the Jobsworth versus the Sea, and more.) This simulation contains wild factual inaccuracies (what the radio field looks like precisely, the variety of signal manipulations that the British used, behavior of a pilot, even how aircraft yokes actually work...); it's intended to convey a loose intuition, no more.
+    </p>
+
+
+    </div>
+  </body>
+</html>
